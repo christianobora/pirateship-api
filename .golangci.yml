@@ -1,0 +1,38 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard
+  enable:
+    - bodyclose
+    - errorlint
+    - exhaustive
+    - gocritic
+    - godot
+    - misspell
+    - nilerr
+    - noctx
+    - perfsprint
+    - revive
+    - unconvert
+    - unparam
+  settings:
+    exhaustive:
+      default-signifies-exhaustive: true
+    revive:
+      rules:
+        - name: exported
+        - name: package-comments
+        - name: receiver-naming
+        - name: var-naming
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
